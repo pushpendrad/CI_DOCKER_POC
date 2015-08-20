@@ -91,7 +91,7 @@
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
-			<version>4.9</version>
+			<version>4.11</version>
 			<scope>test</scope>
 			 <exclusions>
         <exclusion>
@@ -225,7 +225,7 @@
 				</configuration>
 			</plugin>
 
-			<plugin>
+			<!-- <plugin>
 				<groupId>com.atlassian.maven.plugins</groupId>
 				<artifactId>maven-clover2-plugin</artifactId>
 				<version>3.1.12</version>
@@ -254,8 +254,8 @@
 					</execution>
 				</executions>
 			</plugin>
-
-			<plugin>
+ -->
+			<!--<plugin>
 				<groupId>org.apache.tomcat.maven</groupId>
 				<artifactId>tomcat7-maven-plugin</artifactId>
 				<version>2.1</version>
@@ -289,7 +289,7 @@
 
 
 				</executions>
-			</plugin>
+			</plugin>-->
 
 
 
@@ -341,9 +341,10 @@
 					<version>2.10</version>
 					<!-- <configuration> <excludes> <exclude>**/EmployeeControllerTest.java</exclude> 
 						<exclude>**/EmployeeAddControllerTest.java</exclude> </excludes> </configuration> -->
-					<configuration>
+					
 						<!-- Skip the normal tests, we'll run them in the integration-test phase 
 							<skip>true</skip> -->
+							<!--<configuration>
 						<excludes>
 							<exclude>**/EmployeeDeleteSeleniumTest.java</exclude>
 							<exclude>**/EmployeeAddSeleniumTest.java</exclude>
@@ -359,17 +360,33 @@
 							<configuration>
 								<excludes>
 									<exclude>**/EmployeeControllerTest.java</exclude>
-									<!-- <exclude>**/com.sample.mvc.service/</exclude> <exclude>**/com.sample.mvc.dao/</exclude> -->
+									 <exclude>**/com.sample.mvc.service/</exclude> <exclude>**/com.sample.mvc.dao/</exclude> 
 								</excludes>
 							</configuration>
 						</execution>
-					</executions>
+					</executions>-->
 </plugin>
 
 			<plugin>
-        <groupId>org.codehaus.mojo</groupId>
-        <artifactId>cobertura-maven-plugin</artifactId>
-      </plugin>
+			<groupId>org.codehaus.mojo</groupId>  
+<artifactId>cobertura-maven-plugin</artifactId>  
+            <version>2.5.2</version>  
+            <configuration>  
+                <formats>  
+                    <format>xml</format>  
+					<format>html</format> 
+                </formats>  
+            </configuration>  
+            <executions>  
+                <execution>  
+                    <phase>package</phase>  
+                    <goals>  
+					<goal>instrument</goal>  
+					<goal>report</goal>  
+                        <goal>cobertura</goal>  
+                    </goals>  
+                </execution>  
+            </executions>        </plugin>
 			</plugins>
 		</pluginManagement>
 	</build>
