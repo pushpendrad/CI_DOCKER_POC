@@ -232,7 +232,7 @@
           <check>
             <!--<haltOnFailure>true</haltOnFailure>--><!-- optional -->
             <!-- Per-class thresholds -->
-            <lineRate>75</lineRate>
+            <lineRate>60</lineRate>
             <branchRate>0</branchRate>
             <!-- Project-wide thresholds -->
             
