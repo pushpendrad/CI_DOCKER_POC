@@ -232,8 +232,8 @@
           <check>
             <!--<haltOnFailure>true</haltOnFailure>--><!-- optional -->
             <!-- Per-class thresholds -->
-            <lineRate>75</lineRate>
-            <branchRate>75</branchRate>
+            <lineRate>70</lineRate>
+            <branchRate>70</branchRate>
             <!-- Project-wide thresholds -->
             
             <totalLineRate>100</totalLineRate>
