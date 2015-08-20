@@ -232,12 +232,12 @@
           <check>
             <!--<haltOnFailure>true</haltOnFailure>--><!-- optional -->
             <!-- Per-class thresholds -->
-            <lineRate>0</lineRate>
-            <branchRate>0</branchRate>
+            <lineRate>75</lineRate>
+            <branchRate>75</branchRate>
             <!-- Project-wide thresholds -->
             
-            <totalLineRate>20</totalLineRate>
-            <totalBranchRate>0</totalBranchRate>
+            <totalLineRate>100</totalLineRate>
+            <totalBranchRate>100</totalBranchRate>
           </check>
         </configuration>
         <executions>
